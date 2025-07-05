@@ -5,9 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Cart {
-    Customer cartOwner;
-    HashMap <Product , Integer> shoppingList ;
-    List<Product> productList ;
+    private Customer cartOwner;
+    private HashMap <Product , Integer> shoppingList ;
+    private List<Product> productList ;
 
     public Cart(Customer customer) {
         this.shoppingList = new HashMap<>();
@@ -19,7 +19,7 @@ public class Cart {
     {
         if(product.takeQuantity(quantity))
         {
-            shoppingList.put(product,quantity);
+            shoppingList.put(product,shoppingList.getOrDefault(product,0)+quantity);
             productList.add(product);
             return true;
         }
@@ -92,7 +92,7 @@ public class Cart {
          }
          stringBuilder.append("Total package weight  ");
          stringBuilder.append(totalWeight/1000);
-         stringBuilder.append("kg \n");
+         stringBuilder.append("kg \n \n");
 
          stringBuilder.append("** Checkout receipt ** \n");
          for(Product product : this.productList)
