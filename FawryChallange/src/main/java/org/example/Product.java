@@ -91,16 +91,21 @@ public class Product {
 
     public boolean takeQuantity(int q)
     {
+        if(this.quantity == 0)
+        {
+            System.out.println("the product "+ this.name +" is out of stock");
+            return false;
+        }
         if(q>this.quantity)
         {
-            System.out.println("the product"+ this.name +" is out of stock");
+            System.out.println("the product "+ this.name +" has less amount in the stock");
             return false;
         }
         if(this.expirable)
         {
             if(this.expiryDate.before(Main.today))
             {
-                System.out.println("the product"+ this.name +" is Expired ");
+                System.out.println("the product "+ this.name +" is Expired ");
                 return false;
             }
         }

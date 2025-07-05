@@ -22,8 +22,12 @@ public class Main {
         mohamedCart.addProduct(TV,5);
         System.out.println( mohamedCart.Checkout());
 
+        //case of non sufficent product amount
         Customer MOCK = new Customer("MOCK" , 100000 , "Tagmo3");
-        mohamedCart.addProduct(TV,40); //ALL TV's are sold
+        Cart mockCart = new Cart(MOCK);
+        mohamedCart.addProduct(TV,50);
+        System.out.println( mockCart.Checkout());
+
 
 
 
