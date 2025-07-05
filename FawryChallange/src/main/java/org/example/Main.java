@@ -28,6 +28,11 @@ public class Main {
         mohamedCart.addProduct(TV,50);
         System.out.println( mockCart.Checkout());
 
+        //case of expiration
+        milk.setExpiryDate(new Date(2024,8,12));
+        mohamedCart.addProduct(milk,50);
+        System.out.println( mockCart.Checkout());
+
 
 
 
